@@ -16,5 +16,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Vérifier la variable d'environnement
-        run: echo "Environnement: $ENV_NAME
+        run: echo "Environnement"
 
