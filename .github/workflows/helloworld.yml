@@ -15,6 +15,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Vérifier la variable d'environnement
-        run: echo "salut"+${{env.ENV_NAME}}
+    - name: Utiliser un secret
+      run: echo "Mon secret est ${{ secrets.MY_SECRET }}"
 
