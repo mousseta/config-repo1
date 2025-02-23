@@ -1,0 +1,9 @@
+name: Premier workflow
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Afficher un message
+        run: echo "Hello, world!"
