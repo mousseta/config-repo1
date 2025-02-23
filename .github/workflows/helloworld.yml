@@ -6,11 +6,12 @@ on:
     branches:
       - main
 
+env:
+  ENV_NAME: production
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    # Étape 1 : Vérification du code source
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Afficher la variable
+        run: echo "Environnement: $ENV_NAME"
