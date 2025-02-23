@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: Hello World Workflow
 
 on:
   push:
@@ -15,5 +15,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Afficher la variable
+      - name: Vérifier la variable d'environnement
         run: echo "Environnement: ${{ env.ENV_NAME }}"
+
