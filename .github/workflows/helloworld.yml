@@ -1,20 +1,25 @@
-name: Hello World Workflow
+name: CI/CD Pipeline
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
-env:
-  ENV_NAME: production
+on: push
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
-    - name: Utiliser un secret
-      run: echo "Mon secret est ${{ secrets.MY_SECRET }}"
+      - name: Vérification du code
+        run: echo "Exécution des tests"
+
+  build:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Compilation
+        run: echo "Build terminé"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Déploiement
+        run: echo "Déploiement effectué"
 
