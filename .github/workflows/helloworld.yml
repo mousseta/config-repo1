@@ -1,3 +1,5 @@
+name: CI Pipeline
+
 on:
   push:
     branches:
@@ -14,4 +16,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Afficher la variable
-        run: echo "Environnement: $ENV_NAME"
+        run: echo "Environnement: ${{ env.ENV_NAME }}"
