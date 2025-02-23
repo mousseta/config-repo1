@@ -1,9 +1,12 @@
-name: Premier workflow
-on: push
-
 jobs:
-  build:
+  job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Afficher un message
-        run: echo "Hello, world!"
+      - name: Exécution sur Ubuntu
+        run: echo "Ce job tourne sur Ubuntu"
+
+  job2:
+    runs-on: windows-latest
+    steps:
+      - name: Exécution sur Windows
+        run: echo "Ce job tourne sur Windows"
