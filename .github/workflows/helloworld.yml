@@ -2,14 +2,13 @@ name: Premier workflow
 on: push
 
 jobs:
-  job1:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Exécution sur Ubuntu
-        run: echo "Ce job tourne sur Ubuntu"
+      - run: echo "Build terminé"
 
-  job2:
-    runs-on: windows-latest
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
     steps:
-      - name: Exécution sur Windows
-        run: echo "Ce job tourne sur Windows"
+      - run: echo "Déploiement en cours"
