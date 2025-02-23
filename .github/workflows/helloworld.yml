@@ -1,14 +1,16 @@
-name: Premier workflow
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - run: echo "Build terminé"
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
     steps:
-      - run: echo "Déploiement en cours"
+    # Étape 1 : Vérification du code source
+    - name: Checkout code
+      uses: actions/checkout@v3
